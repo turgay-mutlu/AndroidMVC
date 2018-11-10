@@ -1,10 +1,16 @@
 package com.example.turgay.androidmvc.model;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.PrimaryKey;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+@Entity
 public class Repo {
 
+    @PrimaryKey(autoGenerate = false)
     @SerializedName("id")
     @Expose
     private Integer id;
@@ -20,6 +26,7 @@ public class Repo {
     @SerializedName("private")
     @Expose
     private Boolean _private;
+    @Ignore
     @SerializedName("owner")
     @Expose
     private Owner owner;
@@ -166,7 +173,7 @@ public class Repo {
     private String svnUrl;
     @SerializedName("homepage")
     @Expose
-    private Object homepage;
+    private String homepage;
     @SerializedName("size")
     @Expose
     private Integer size;
@@ -199,7 +206,7 @@ public class Repo {
     private Integer forksCount;
     @SerializedName("mirror_url")
     @Expose
-    private Object mirrorUrl;
+    private String mirrorUrl;
     @SerializedName("archived")
     @Expose
     private Boolean archived;
@@ -208,7 +215,7 @@ public class Repo {
     private Integer openIssuesCount;
     @SerializedName("license")
     @Expose
-    private Object license;
+    private String license;
     @SerializedName("forks")
     @Expose
     private Integer forks;
@@ -646,11 +653,11 @@ public class Repo {
         this.svnUrl = svnUrl;
     }
 
-    public Object getHomepage() {
+    public String getHomepage() {
         return homepage;
     }
 
-    public void setHomepage(Object homepage) {
+    public void setHomepage(String homepage) {
         this.homepage = homepage;
     }
 
@@ -734,11 +741,11 @@ public class Repo {
         this.forksCount = forksCount;
     }
 
-    public Object getMirrorUrl() {
+    public String getMirrorUrl() {
         return mirrorUrl;
     }
 
-    public void setMirrorUrl(Object mirrorUrl) {
+    public void setMirrorUrl(String mirrorUrl) {
         this.mirrorUrl = mirrorUrl;
     }
 
@@ -758,11 +765,11 @@ public class Repo {
         this.openIssuesCount = openIssuesCount;
     }
 
-    public Object getLicense() {
+    public String getLicense() {
         return license;
     }
 
-    public void setLicense(Object license) {
+    public void setLicense(String license) {
         this.license = license;
     }
 
